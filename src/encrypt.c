@@ -1,7 +1,11 @@
 #include "encrypt.h"
+#include <string.h>
 
-void xor_encrypt_decrypt(char *data, char key) {
-    for (int i = 0; data[i] != '\0'; i++) {
+int xor_encrypt_decrypt(char *data, size_t length, char key) {
+    if (!data || key == 0) return -1;
+    
+    for (size_t i = 0; i < length; i++) {
         data[i] ^= key; // XOR encryption/decryption
     }
+    return 0;
 }

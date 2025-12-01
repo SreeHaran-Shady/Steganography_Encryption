@@ -1,6 +1,8 @@
 #ifndef ENCRYPT_H
 #define ENCRYPT_H
 
-void xor_encrypt_decrypt(char *data, char key);
+#include <stddef.h>
+
+int xor_encrypt_decrypt(char *data, size_t length, char key);
 
 #endif
